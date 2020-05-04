@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>signup form</title>
+<script type="text/javascript">
+function validate()
+{
+var fn=document.forms[0].elements[0].value;
+var ln=document.forms[0].elements[1].value;
+var ps=document.forms[0].elements[2].value;
+var rps=document.forms[0].elements[3].value;
+var un=document.forms[0].elements[4].value;
+var f=un.search(/1bm16cs[0-9]{3}/i);
+if(fn==""||ln==""||ps==""||un==""||rps=="")
+{
+alert("ALL ELEMENTS IN THE FORM MUST BE FILLED!");
+return false;
+}
+if(f==-1)
+{
+alert("USN NOT IN FORMAT!");
+document.forms[0].elements[4].focus();
+return false;
+}
+if(ps!=rps)
+{
+alert("THE TW0 PASSWORDS ENTERED BY YOU DOESN'T MATCH PLEASE REENTER");
+document.forms[0].elements[2].focus();
+return false;
+}
+return true;
+}
+</script>
+</head>
+<body style="background-image:url('f.jpg');">
+<h1 style="position:absolute;top:50px;color:white;">PLEASE ENTER YOUR DETAILS HERE:</h1>
+<form action="newuser.php"onsubmit="return(validate());" style="position:absolute;top:150px;left:530px;"  method="POST">
+ <label style="color:white;"><b>FIRST NAME:</b></label><input type="text" placeholder="firstname" name="fname"><br /><br />
+<label style="color:white;"><b>LAST NAME:</b></label><input type="text" placeholder="lastname" name="lname"><br /><br />
+&nbsp&nbsp<label style="color:white;"><b>PASSWORD:</b></label><input type="password" placeholder="password" name="psw"><br /><br />
+<label style="color:white;position:absolute;left:-65px;"><b>RETYPE PASSWORD:</b></label><input type="password" style="position:absolute;left:100px;" placeholder="password" name="rpsw"><br /><br />
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<label style="color:white;"><b>USN:</b></label><input type="text" placeholder="usn" maxlength="10" name="usn"><br /><br />
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="submit" value="SUBMIT">
+</form>
+</html>

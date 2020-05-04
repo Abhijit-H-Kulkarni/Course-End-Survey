@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>front page</title>
+<style type="text/css">
+body,html{height:100%;width:100%;}
+.one{background-color:black;padding:5px;
+height:20%;}
+.three{background-color:powderblue;
+height:80%;width:100%;float:left;}
+</style>
+<script type="text/javascript">
+function validate()
+{
+var f=document.forms[0].elements[0].value;
+if(f==""){
+alert("YOU HAVE NOT ENTRED USN");
+document.forms[0].elements[0].focus();
+}}
+</script>
+</head>
+<body>
+<div class="one"><img src="bmslogo.jpg" style="float:left;border-radius:100px;"/><p style="font-family:'lucida handwriting';font-size:50px;color:white;">WELCOME TO COURSE END SURVEY!!!</p></div>
+<div class="three"><p style="font-family:'monotype corsiva';font-size:40px;color:black;"></p>
+<p style="font-size:30px;font-family:'lucida handwriting';">ENTER THE DETAILS OF THE STUDENT YOU WANT TO DELETE:</p><br />
+<center><form  action="re.php"onsubmit="return(validate());" method="POST" >
+<label><b>USN:</b><input type="text" name="n" /></label><br /><br />
+<input type="submit" value="SUBMIT" >
+</form><br />
+<form action="teachersfpage.php">
+<input type="submit" value="HOME">
+</form>
+</center>
+</div>
+</body>
+</html>
+
+
+
